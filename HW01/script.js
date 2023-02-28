@@ -26,6 +26,7 @@ document.writeln("Максимальна ціна: ", Math.max(tea,coffe,juice))
 document.writeln("Мінімальна ціна: ", Math.min(tea,coffe,juice));
 document.writeln("Загальна вартість товарів: ", goodsCost);
 document.writeln("Загальна вартість товарів, без копійок, округлене у менший бік: ", goodsCost2);
+document.writeln("Готівка клієнта: ", cash)
 document.writeln("Загальна вартість товарів, округлене до більшого: ", Math.ceil((goodsCost2/100))*100);
 document.writeln("Сума вартості товарів непарна: ", Boolean((goodsCost2%2)));
 document.writeln("Ваша решта: ", change);
