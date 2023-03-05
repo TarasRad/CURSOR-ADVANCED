@@ -1,0 +1,34 @@
+let N = +prompt('введіть N:')
+let M = +prompt('введіть N:')
+let isEven = confirm('Пропускати парні числа?')
+let sum = 0
+
+if (!(N % 1 == 0)) {
+    alert('Число N не підходить!')
+};
+if (!(M % 1 == 0)) {
+    alert('Число M не підходить!')
+};
+
+
+
+if (isEven == true) {
+for (let i = N; i <M; i++ && !(i % 2 == 0)){
+   
+    i=i+1;
+    console.log(i)
+            sum+=i
+        }
+    } else {
+        for (let i = N; i <=M; i++){
+            sum+=i
+            console.log(i)
+        }
+        
+    }
+
+
+
+ console.log(sum)
+
+
