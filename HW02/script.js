@@ -1,16 +1,21 @@
 let N = +prompt("введіть N:");
 let M = +prompt("введіть M:");
-let isEven = confirm("Пропускати парні числа?");
 let sum = 0;
 
-if (!(N % 1 == 0)) {
-  alert("Число N не підходить!");
-  let N = +prompt("введіть N:");
+while (!(N%1==0)||!(M%1==0)) {
+  N = +prompt("введіть N:");
+  M = +prompt("введіть M:");
 }
-if (!(M % 1 == 0)) {
-  alert("Число M не підходить!");
-  let M = +prompt("введіть M:");
-}
+
+// if (!(N % 1 == 0 && N === NaN)) {
+//   alert("Число N не підходить!");
+//   let N = +prompt("введіть N:");
+// }
+// if (!(M % 1 == 0 && M === NaN)) {
+//   alert("Число M не підходить!");
+//   let M = +prompt("введіть M:");
+// }
+let isEven = confirm("Пропускати парні числа?");
 
 if (isEven == true) {
   for (let i = N; i < M; i++ && !(i % 2 == 0)) {
