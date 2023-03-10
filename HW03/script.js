@@ -56,9 +56,15 @@ function getRandomNumber(N, M) {
 // getMaxDigit()
 
 
-function countLetter(str) {
+function countLetter(str, ) {
     let newStr = str.toLowerCase();
     newStr = newStr.charAt(0).toUpperCase() + newStr.slice(1); //slice(n) - видаляє буква з рядка за порядковим номером n
     return newStr 
 }
 //console.log(countLetter('qwerTYUIUI'))
+
+function convertCurrency(currency) {
+    
+
+}
+convertCurrency()

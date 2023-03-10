@@ -31,6 +31,6 @@ if (isEven == true) {
 }
 console.log(sum);
 document.writeln("Введене число N: ", N);
-document.writeln("Введене число N: ", M);
+document.writeln("Введене число M: ", M);
 document.writeln("Чи пропускати парні числа? ", isEven);
 document.writeln("Сума чисел: ", sum);
