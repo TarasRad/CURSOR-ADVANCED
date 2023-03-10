@@ -64,7 +64,19 @@ function countLetter(str, ) {
 //console.log(countLetter('qwerTYUIUI'))
 
 function convertCurrency(currency) {
-    
+if (currency.includes("$")) {
+    currency = currency.slice(0, -1);
+    const numbersOfCurrency = parseFloat(currency);
+    let exchangeSum = numbersOfCurrency*25;
+console.log(exchangeSum)
+} else if ((currency.toLowerCase()).includes("uah")){
+    currency = currency.slice(0, -3);
+    const numbersOfCurrency = parseFloat(currency);
+    let exchangeSum = numbersOfCurrency*0.04;
+    console.log(exchangeSum)
 
+} else {
+    console.log("Ви ввели некоректне значення");
 }
-convertCurrency()
+}
+//convertCurrency("2500uAh")
