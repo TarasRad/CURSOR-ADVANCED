@@ -1,24 +1,26 @@
 function getSalary (fullSalary) {
      if (0 < fullSalary){
      const salary = fullSalary-(fullSalary*0.195);
-     console.log(salary)
+     //console.log('salary',salary)
+     return salary
 
      } else {
         console.log('ви ввели неправильне значення')
      }
 }
-// getSalary();
+//console.log(getSalary(1000))
+ //getSalary(1000);
 
 function getRandomPassword(symbolQuantity) {
     if (0 > symbolQuantity <= 8) {
         const fullPassword = (Math.floor(Math.random()*100000000)).toString();
         const password = fullPassword.substring(0, symbolQuantity);
-        console.log(password);
+        return password;
     } else {
         console.log('введіть число від 1 до 8')
     }
 }
-// getRandomPassword()
+ //console.log(getRandomPassword())
 
 function deleteLetters(letter, str) {
     let newStr = "";
@@ -56,27 +58,27 @@ function getRandomNumber(N, M) {
 // getMaxDigit()
 
 
-function countLetter(str, ) {
+function countLetter(str) {
     let newStr = str.toLowerCase();
     newStr = newStr.charAt(0).toUpperCase() + newStr.slice(1); //slice(n) - видаляє буква з рядка за порядковим номером n
     return newStr 
 }
-//console.log(countLetter('qwerTYUIUI'))
+//countLetter('qwerTYUIUI')
 
 function convertCurrency(currency) {
 if (currency.includes("$")) {
     currency = currency.slice(0, -1);
     const numbersOfCurrency = parseFloat(currency);
     let exchangeSum = numbersOfCurrency*25;
-console.log(exchangeSum)
+    return exchangeSum;
 } else if ((currency.toLowerCase()).includes("uah")){
     currency = currency.slice(0, -3);
     const numbersOfCurrency = parseFloat(currency);
     let exchangeSum = numbersOfCurrency*0.04;
-    console.log(exchangeSum)
+    return exchangeSum;
 
 } else {
     console.log("Ви ввели некоректне значення");
 }
 }
-//convertCurrency("2500uAh")
+//console.log(convertCurrency("100$"))
