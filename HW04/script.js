@@ -41,7 +41,7 @@ for (let i=0; i<girls.length; i++){
         randomNumbers.push(randomNumber);
         
       }
-    pairsRandomMarks.push(boys[i], girls[i], randomNumbers[i])
+    pairsRandomMarks.push([boys[i], girls[i], randomNumbers[i]])
 
 
 }
