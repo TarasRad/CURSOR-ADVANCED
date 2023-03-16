@@ -10,13 +10,17 @@ const themes = [
     "Теорія автоматів",
     "Алгоритми і структури даних"];
 const marks = [4, 5, 5, 3, 4, 5];
-const girls = [];
+const pairsTaskMarks = [];
+const pairsMarks = [];
+const randomMarks = [];
+const pairsRandomMarks = [];
+
+
+function getPairs(students){
+    const girls = [];
 const boys  = [];
 const pairs = [];
-const pairsWithMarks = [];
-const studentsMarks = [];
-
-
+//let randomMark = Math.floor(Math.random() * 5) + 1;
 for (let i = 0; i < students.length; i++) {
     if (students[i].endsWith("а")) {
         girls.push(students[i]);
@@ -26,16 +30,34 @@ for (let i = 0; i < students.length; i++) {
     }
   }
 
-//   console.log(girls);
-//   console.log(boys);
+
 
 for (let i=0; i<girls.length; i++){
-    pairs.push([boys[i], girls[i], themes[i], marks[i]])
-    console.log(pairs)
+    pairs.push([boys[i], girls[i]]);
+    pairsMarks.push([boys[i], girls[i], marks[i]]);
+    pairsTaskMarks.push([boys[i], girls[i],themes[i], marks[i]]);
+    for (let i = 0; i < 5; i++) {
+        const randomNumber = Math.floor(Math.random() * 5) + 1;
+        randomNumbers.push(randomNumber);
+        
+      }
+    pairsRandomMarks.push(boys[i], girls[i], randomNumbers[i])
+
+
+}
+return pairs
 }
 
-for (let i=0;i<students.length; i++) {
-    studentsMarks.push([students[i], marks[i]])
-    console.log(studentsMarks)
-}
+const randomNumbers = [];
+
+console.log(getPairs(students))
+console.log(pairsMarks)
+console.log(pairsTaskMarks)
+console.log(pairsRandomMarks)
+
+
+
+
+
+
 
