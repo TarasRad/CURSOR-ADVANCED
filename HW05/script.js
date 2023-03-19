@@ -7,7 +7,7 @@ function getRandomArray(length, min, max) {
   }
   return array;
 }
-//  getRandomArray(15, 2, 100);
+  getRandomArray(15, 2, 100);
 //  console.log('Task 1', array);
 
 // function getModal(...arr) {
@@ -42,11 +42,11 @@ function getAverage(...numbers) {
   average = sum / numbers.length;
   // console.log('numbers', numbers)
   // console.log('sum', sum)
-  // console.log('average', average)
-  return sum;
+   console.log('average', average)
+  return average;
 }
 
-//getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)
+getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)
 
 function getMedian(...numbers) {
   const sortedNumbers = numbers.sort((a, b) => a - b);
@@ -63,7 +63,7 @@ function getMedian(...numbers) {
   console.log(sortedNumbers);
   return medianNumber;
 }
-//console.log(getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2))
+console.log(getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2))
 
 
 function filterEvenNumbers(...numbers){
@@ -71,14 +71,14 @@ function filterEvenNumbers(...numbers){
   console.log(evenNumbers)
 }
 
-//filterEvenNumbers(1, 2, 3, 4, 5, 6)
+filterEvenNumbers(1, 2, 3, 4, 5, 6)
 
 
 function getDividedByFive(...numbers){
   const dividedByFive = numbers.filter(number => number% 5 === 0);
   console.log(dividedByFive)
 }
- //getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)
+ getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)
 
 
  function divideByThree(word){
@@ -96,4 +96,4 @@ function getDividedByFive(...numbers){
     }
 
  }
- //divideByThree('Commander')
+ divideByThree('Commander')
