@@ -63,5 +63,37 @@ function getMedian(...numbers) {
   console.log(sortedNumbers);
   return medianNumber;
 }
+//console.log(getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2))
 
-console.log(getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2))
+
+function filterEvenNumbers(...numbers){
+  const evenNumbers = numbers.filter(number => number% 2 !== 0);
+  console.log(evenNumbers)
+}
+
+//filterEvenNumbers(1, 2, 3, 4, 5, 6)
+
+
+function getDividedByFive(...numbers){
+  const dividedByFive = numbers.filter(number => number% 5 === 0);
+  console.log(dividedByFive)
+}
+ //getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)
+
+
+ function divideByThree(word){
+  
+  (String(word).toLowerCase())
+  let reWord= word.replace(/ /g, "")
+    for (let i=0;i<reWord.length;i+=3) {
+      let newWord = [];
+      newWord.push(reWord.slice(i, i+3))
+
+      console.log(reWord)
+
+      console.log(newWord)
+
+    }
+
+ }
+ //divideByThree('Commander')
