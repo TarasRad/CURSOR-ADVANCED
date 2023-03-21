@@ -14,13 +14,14 @@ const pairsTaskMarks = [];
 const pairsMarks = [];
 const randomMarks = [];
 const pairsRandomMarks = [];
+const randomNumbers = [];
+const girls = [];
+const boys  = [];
+const pairs = [];
 
 
 function getPairs(students){
-    const girls = [];
-const boys  = [];
-const pairs = [];
-//let randomMark = Math.floor(Math.random() * 5) + 1;
+
 for (let i = 0; i < students.length; i++) {
     if (students[i].endsWith("а")) {
         girls.push(students[i]);
@@ -34,26 +35,40 @@ for (let i = 0; i < students.length; i++) {
 
 for (let i=0; i<girls.length; i++){
     pairs.push([boys[i], girls[i]]);
-    pairsMarks.push([boys[i], girls[i], marks[i]]);
-    pairsTaskMarks.push([boys[i], girls[i],themes[i], marks[i]]);
-    for (let i = 0; i < 5; i++) {
-        const randomNumber = Math.floor(Math.random() * 5) + 1;
-        randomNumbers.push(randomNumber);
-        
-      }
-    pairsRandomMarks.push([boys[i], girls[i], randomNumbers[i]])
 
 
 }
 return pairs
 }
 
-const randomNumbers = [];
+function getPairsMarks(pairs){
+    for (let i=0;i<pairs.length;i++){
+        pairsMarks.push([pairs[i], marks[i]])
+    }
+    return pairsMarks;
+}
+ function getPairsTaskMarks(pairsMarks){
+    for (let i=0; i<pairsMarks.length; i++){
+        pairsTaskMarks.push([pairsMarks[i], themes[i]])
+    }
+    return pairsTaskMarks;
+ }
+
+ function getPairsRandomMarks(pairsTaskMarks){
+    for (let i=0; i<pairsTaskMarks.length; i++){
+        for (let i = 0; i < 5; i++) {
+                const randomMark = Math.floor(Math.random() * 5) + 1;
+                randomNumbers.push(randomMark);
+              } 
+        pairsRandomMarks.push([pairsTaskMarks[i], randomNumbers[i]])
+    }
+    return pairsRandomMarks
+ }
 
 console.log(getPairs(students))
-console.log(pairsMarks)
-console.log(pairsTaskMarks)
-console.log(pairsRandomMarks)
+console.log(getPairsMarks(pairs))
+console.log(getPairsTaskMarks(pairsMarks))
+console.log(getPairsRandomMarks(pairsTaskMarks))
 
 
 
