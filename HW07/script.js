@@ -43,20 +43,24 @@ function calculateTaxes(salary) {
 
   function getMySalary(country){
     let salary = (Math.random() * (2000 - 1500) + 1500).toFixed();
-    // console.log('salary',salary)
-    // console.log('this', this.tax)
+     //console.log('salary',salary)
+     //console.log('this', this.tax)
 
     let profit = (salary-this.tax).toFixed(2)
     //console.log('profit', profit)
-return profit
-
+    newObj = {salary: salary, taxes: this.tax, profit: profit}
+// return newObj
+console.log(newObj)
 
   }
- //getMySalary.call(ukraine)
+ getMySalary.call(ukraine)
  setInterval(function(){
     const profit = getMySalary.call(ukraine);
     console.log('profit: ', profit);
   }, 10000);
+
+
+
 //    console.log()
 
 
