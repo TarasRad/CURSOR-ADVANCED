@@ -14,26 +14,49 @@ const litva = {
   vacancies: 1114,
 };
 
-function calculateTaxes(country, salary) {
-    const taxAmount = country.tax * salary;
+function calculateTaxes(salary) {
+    console.log(this.tax)
 
+    const taxAmount = (this.tax * salary).toFixed(2);
     return taxAmount;
+    //.log(taxAmount)
   }
 
-  const taxes = calculateTaxes(latvia, 2000);
-  console.log(taxes);
+//console.log(calculateTaxes.call(ukraine,1000.33));
+  //console.log(taxes);
   
-//   function getMiddleTaxes(country){
-//     const middletax = 
-//   }
+  function getMiddleTaxes(){
+    const middleTax = (this.tax*this.middleSalary).toFixed(2)
+    return middleTax
+  }
+
+  //console.log(getMiddleTaxes.call(latvia));
 
 
+  function getTotalTaxes(){
+    const totalTaxes = (this.tax*this.middleSalary*this.vacancies).toFixed(2)
+    return totalTaxes
+  }
+
+  //console.log(getTotalTaxes.call(latvia));
 
 
+  function getMySalary(country){
+    let salary = (Math.random() * (2000 - 1500) + 1500).toFixed();
+    // console.log('salary',salary)
+    // console.log('this', this.tax)
+
+    let profit = (salary-this.tax).toFixed(2)
+    //console.log('profit', profit)
+return profit
 
 
-
-
+  }
+ //getMySalary.call(ukraine)
+ setInterval(function(){
+    const profit = getMySalary.call(ukraine);
+    console.log('profit: ', profit);
+  }, 10000);
 //    console.log()
 
 
