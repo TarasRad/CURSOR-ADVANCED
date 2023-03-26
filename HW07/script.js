@@ -46,7 +46,7 @@ function calculateTaxes(salary) {
      //console.log('salary',salary)
      //console.log('this', this.tax)
 
-    let profit = (salary-this.tax).toFixed(2)
+    let profit = salary-(salary*this.tax).toFixed(2)
     //console.log('profit', profit)
     newObj = {salary: salary, taxes: this.tax, profit: profit}
 // return newObj
