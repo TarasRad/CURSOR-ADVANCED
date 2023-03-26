@@ -51,4 +51,4 @@ console.log(stud.marks);
 stud.marks = 5;
 console.log(stud.marks);
 stud.getAverageMark();
-stud.dismiss();
+//stud.dismiss();
