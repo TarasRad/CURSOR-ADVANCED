@@ -1,0 +1,29 @@
+.container {
+  margin: 25% auto;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+}
+.keys {
+    width: 50px;
+    height: 50px;
+  display: inline-block;
+  border: 3px solid black;
+  border-radius: 10px;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 20px;
+  cursor: pointer;
+}
+.keys:hover{
+    background-color: rgb(14, 173, 146);
+    color: aliceblue;
+}
+span {
+    display: block;
+  font-size: 50px;
+margin: 0;
+padding: 0;
+
+}
