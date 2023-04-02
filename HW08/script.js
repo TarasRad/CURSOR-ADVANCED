@@ -67,19 +67,19 @@ stud.recover();
 console.log(stud.marks); 
 
 
-// class BudgetStudent extends Student {
-//     constructor(scholarship){
-//         super(scholarship)
-//     }
-//     getScholarship(){
-//         console.log('Виотримали 1400 грн. стипендії');
+class BudgetStudent extends Student {
+    constructor(scholarship){
+        super(scholarship)
+    }
+    getScholarship(){
+        console.log('Виотримали 1400 грн. стипендії');
 
-//     }
+    }
     
-// }
-// let newStud = new BudgetStudent()
+}
+let newStud = new BudgetStudent()
 
-// console.log(newStud);
+console.log(newStud);
 
-// newStud.getScholarship()
+newStud.getScholarship()
 //console.log(newStud.getScholarship());
