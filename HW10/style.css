@@ -1,3 +1,10 @@
+body {
+    background: url(./img/patron.png) no-repeat;
+    background-position: center;
+    background-size: 50%;
+   
+    
+}
 .container {
   margin: 25% auto;
   justify-content: center;
