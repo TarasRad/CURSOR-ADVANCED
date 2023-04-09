@@ -1,0 +1,32 @@
+body {
+    background-color: black;
+}
+section{
+    display: block;
+}
+.main-pic{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  
+}
+button{
+    display: block;
+    background-color: black;
+    max-width: 792px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 30px;
+    color: rgb(110, 109, 109);
+}
+button:hover {
+    color: rgb(152, 167, 23);
+  }
+p {
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 40px;
+}
