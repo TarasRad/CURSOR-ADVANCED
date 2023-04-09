@@ -3,7 +3,6 @@ console.log(name);
 }
 
 
-
 function getInfo(){
 fetch("https://swapi.dev/api/films/").then((res)=>{
 return res.json();
