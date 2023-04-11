@@ -30,3 +30,22 @@ p {
     font-family: 'Sedgwick Ave Display', cursive;
     font-size: 40px;
 }
+h2{
+    color: white;
+}
+#submitDiv{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+input{
+    display: flex;
+    height: 40px;
+    width: auto;
+}
+#submitBtn{
+    width: auto;
+    display: flex;
+    text-align: center;
+}

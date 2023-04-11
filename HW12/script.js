@@ -11,7 +11,7 @@ function getFilms() {
       console.log({ data });
     });
 }
-getFilms();
+//getFilms();
 
 function getAllChatacters() {
   const peopleUrl = "https://swapi.dev/api/people/";
@@ -30,9 +30,10 @@ function getAllChatacters() {
   }
   getCharacters(peopleUrl);
 }
-getAllChatacters();
+//getAllChatacters();
 
 function getFilmsCharacters(film) {
+    
   const filmsApi = "https://swapi.dev/api/films/";
   let newUrl = filmsApi + film;
   console.log("NEW URL", newUrl);
@@ -43,25 +44,52 @@ function getFilmsCharacters(film) {
     .then((film) => {
       console.log(film.title);
       const characters = film.characters;
-      console.log(characters);
-      let charactersByName = [];
-
+      //console.log(characters);
+      let charactersByName = {};
+      
       for (let i = 0; i < characters.length; i++) {
         let characterURL = characters[i];
         fetch(characterURL)
           .then((res) => res.json())
           .then((character) => {
-            charactersByName.push([character.name, character.birth_year, character.gender]);
-            // charactersByName={
-            //     name:character.name
-            // }
+            //charactersByName.push([character.name, character.birth_year, character.gender]);
+            //const charactersByName = {};
+            //charactersByName[character.name] = [character.birth_year, character.gender];
+            charactersByName[character.name] = {
+                birthYear: character.birth_year,
+                gender: character.gender
+              };
+
           });
       }
       setTimeout(() => {
-        console.log(charactersByName);
+        
+        const charactersList = document.createElement("ul");
+        for (const [name, info] of Object.entries(charactersByName)) {
+          listItem = document.createElement("li");
+          listItem.innerHTML = `<strong>${name}</strong> (Date: ${info.birthYear}, Gender: ${info.gender})`;
+          charactersList.appendChild(listItem);
+        }
+        document.body.appendChild(charactersList);
       }, 500);
     });
+
 }
-getFilmsCharacters(2);
+getFilmsCharacters();
+
+const filmInput = document.getElementById("filmInput");
+const submitBtn = document.getElementById("submitBtn");
+submitBtn.addEventListener("click", () => {
+  let film = filmInput.value;
+ 
+  getFilmsCharacters(film);
+});
 
 
+// const div = document.createElement("div");
+// const nameInfo = document.createElement("h2");
+// const birthInfo = document.createElement("span");
+// const genderInfo  = document.createElement("span");
+// nameInfo.textContent = charactersByName.name;
+// div.append(nameInfo);
+// document.body.append(div);
