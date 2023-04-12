@@ -67,7 +67,9 @@ function getFilmsCharacters(film) {
       }
 
       setTimeout(() => {
-
+        let filmInfo = document.createElement("h2")
+        filmInfo.innerHTML = `${film.title}`;
+        document.body.append(filmInfo);
         let charactersList = document.createElement("ul");
         for (const [name, info] of Object.entries(charactersByName)) {
           listItem = document.createElement("li");
