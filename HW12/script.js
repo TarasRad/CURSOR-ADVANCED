@@ -9,9 +9,13 @@ function getFilms() {
     })
     .then((data) => {
       console.log({ data });
+      let infoDiv =  document.createElement("div");
+      let infoList = document.createElement("span");
+      infoDiv.append(infoList);
+      infoList.innerHTML += `${data}`
     });
 }
-//getFilms();
+getFilms();
 
 function getAllChatacters() {
   const peopleUrl = "https://swapi.dev/api/people/";
@@ -33,7 +37,7 @@ function getAllChatacters() {
 //getAllChatacters();
 
 function getFilmsCharacters(film) {
-    
+   
   const filmsApi = "https://swapi.dev/api/films/";
   let newUrl = filmsApi + film;
   console.log("NEW URL", newUrl);
@@ -43,6 +47,7 @@ function getFilmsCharacters(film) {
     })
     .then((film) => {
       console.log(film.title);
+      
       const characters = film.characters;
       //console.log(characters);
       let charactersByName = {};
@@ -52,9 +57,7 @@ function getFilmsCharacters(film) {
         fetch(characterURL)
           .then((res) => res.json())
           .then((character) => {
-            //charactersByName.push([character.name, character.birth_year, character.gender]);
-            //const charactersByName = {};
-            //charactersByName[character.name] = [character.birth_year, character.gender];
+            
             charactersByName[character.name] = {
                 birthYear: character.birth_year,
                 gender: character.gender
@@ -62,9 +65,10 @@ function getFilmsCharacters(film) {
 
           });
       }
+
       setTimeout(() => {
-        
-        const charactersList = document.createElement("ul");
+
+        let charactersList = document.createElement("ul");
         for (const [name, info] of Object.entries(charactersByName)) {
           listItem = document.createElement("li");
           listItem.innerHTML = `<strong>${name}</strong> (Date: ${info.birthYear}, Gender: ${info.gender})`;
@@ -75,15 +79,29 @@ function getFilmsCharacters(film) {
     });
 
 }
-getFilmsCharacters();
+//getFilmsCharacters();
 
 const filmInput = document.getElementById("filmInput");
+
 const submitBtn = document.getElementById("submitBtn");
 submitBtn.addEventListener("click", () => {
+
   let film = filmInput.value;
- 
+
   getFilmsCharacters(film);
+
 });
+
+window.addEventListener("keydown", function(event){
+    const key = event.key.toLowerCase();
+    console.log(key);
+        if(key==='enter'){
+            let film = filmInput.value;
+
+            getFilmsCharacters(film);
+        }
+})
+
 
 
 // const div = document.createElement("div");
