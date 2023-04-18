@@ -1,14 +1,10 @@
-function getPerson({ name }) {
-  console.log(name);
-}
-
 function getFilms() {
   fetch("https://swapi.dev/api/films/")
     .then((res) => {
       return res.json();
     })
     .then((data) => {
-      console.log({ data });
+      //console.log({ data });
       let infoDiv =  document.createElement("div");
       let infoList = document.createElement("span");
       infoDiv.append(infoList);
@@ -106,10 +102,75 @@ window.addEventListener("keydown", function(event){
 
 
 
-// const div = document.createElement("div");
-// const nameInfo = document.createElement("h2");
-// const birthInfo = document.createElement("span");
-// const genderInfo  = document.createElement("span");
-// nameInfo.textContent = charactersByName.name;
-// div.append(nameInfo);
-// document.body.append(div);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function getPlanetsNext(){
+//   const planetsUrl = "https://swapi.dev/api/planets/";
+// fetch(planetsUrl)
+//   .then(res=>res.json())
+//   .then((data)=>{
+//     if(data.next){
+//       //let newUrl =[]
+//       const dataQuant = data.count/10
+//       //console.log(dataQuant);
+//       for (let i=1; i<=dataQuant;i++){
+//         //console.log(i);
+//         let newUrl=planetsUrl+i;
+//         console.log(newUrl);
+//         getPlanets(newUrl)
+//       }
+//     }
+// });
+// }
+// getPlanetsNext()
+
+// function getPlanets(url){
+//   fetch(url)
+//     .then((res)=>res.json())
+//     .then((data)=>console.log(data.resutlts))
+// }
+// getPlanets()
+
+
+
+
+// const planetBtn = document.getElementById("planetBtn");
+// const resultsContainer = document.querySelector('.results-container');
+
+// planetBtn.addEventListener('click', function() {
+//   resultsContainer.innerHTML = ''; // Очищаємо контейнер з результатами
+//   getPlanetsNext();
+// });
+
+// function getPlanetsNext(page = 1) {
+//   let planetsUrl = `https://swapi.dev/api/planets/?page=${page}`;
+//   fetch(planetsUrl)
+//     .then(res => res.json())
+//     .then((data) => {
+//       console.log(data);
+//       if (data.results) {
+//         // Виводимо інформацію про кожну планету у контейнер з результатами
+//         data.results.forEach((planet) => {
+//           resultsContainer.innerHTML += `<div>${planet.name}</div>`;
+//         });
+
+//         if (data.next) {
+//           getPlanetsNext(page + 1);
+//         }
+//       }
+//     });
+// }
