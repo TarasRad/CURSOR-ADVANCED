@@ -148,29 +148,28 @@ window.addEventListener("keydown", function(event){
 
 
 
-// const planetBtn = document.getElementById("planetBtn");
-// const resultsContainer = document.querySelector('.results-container');
+const planetBtn = document.getElementById("planetBtn");
+const resultsContainer = document.querySelector('.results-container');
 
-// planetBtn.addEventListener('click', function() {
-//   resultsContainer.innerHTML = ''; // Очищаємо контейнер з результатами
-//   getPlanetsNext();
-// });
+planetBtn.addEventListener('click', function() {
+  resultsContainer.innerHTML = ''; 
+  getPlanetsNext();
+});
 
-// function getPlanetsNext(page = 1) {
-//   let planetsUrl = `https://swapi.dev/api/planets/?page=${page}`;
-//   fetch(planetsUrl)
-//     .then(res => res.json())
-//     .then((data) => {
-//       console.log(data);
-//       if (data.results) {
-//         // Виводимо інформацію про кожну планету у контейнер з результатами
-//         data.results.forEach((planet) => {
-//           resultsContainer.innerHTML += `<div>${planet.name}</div>`;
-//         });
+function getPlanetsNext(page = 1) {
+  let planetsUrl = `https://swapi.dev/api/planets/?page=${page}`;
+  fetch(planetsUrl)
+    .then(res => res.json())
+    .then((data) => {
+      console.log(data);
+      if (data.results) {
+        data.results.forEach((planet) => {
+          resultsContainer.innerHTML += `<ul><li>${planet.name}</ul></li>`;
+        });
 
-//         if (data.next) {
-//           getPlanetsNext(page + 1);
-//         }
-//       }
-//     });
-// }
+        if (data.next) {
+          getPlanetsNext(page + 1);
+        }
+      }
+    });
+}
